@@ -1,38 +1,100 @@
+/* App.css */
+
+/* Common styles for the App component */
 .App {
-  text-align: center;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	margin-top: 50px;
+	transition: color 0.3s;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Styles for the body element */
+body {
+	margin: 0;
+	padding: 0;
+	transition: background-color 0.3s, color 0.3s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Styles for day mode */
+.day {
+	background-color: #ffffff; /* White background for day mode */
+	color: #000000; /* Black text for day mode */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Styles for night mode */
+.night {
+	background-color: #000000; /* AMOLED black background for night mode */
+	color: #ffffff; /* White text for night mode */
 }
 
-.App-link {
-  color: #61dafb;
+/* Button styles */
+button {
+	padding: 15px 25px;
+	background: #9b59b6;
+	color: white;
+	border: 2px solid #ecf0f1;
+	outline: none;
+	border-radius: 5px;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-size: 18px;
+	margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+	background: #8e44ad;
+}
+
+/* Switch styles */
+.toggle-container {
+	margin-top: 20px;
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	transition: 0.4s;
+	border-radius: 34px;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	border-radius: 50%;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	transition: 0.4s;
+}
+
+input:checked + .slider {
+	background-color: #9b59b6;
+}
+
+input:checked + .slider:before {
+	transform: translateX(26px);
+}
+
+.round {
+	border-radius: 34px;
 }
